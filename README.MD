@@ -2,6 +2,8 @@
 
 #### Demo of ARKit with SRP.
 
+![](img/SRPCube.gif)
+
 ## The deal
 
 Hit the SRPCube with papers. Another has spawned. Have fun.
