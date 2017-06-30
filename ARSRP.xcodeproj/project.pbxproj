@@ -13,6 +13,8 @@
 		598D90DD1F0641FF0035B357 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 598D90DB1F0641FF0035B357 /* Main.storyboard */; };
 		598D90DF1F0641FF0035B357 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 598D90DE1F0641FF0035B357 /* Assets.xcassets */; };
 		598D90E21F0641FF0035B357 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 598D90E01F0641FF0035B357 /* LaunchScreen.storyboard */; };
+		598D90EA1F0642270035B357 /* Paper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598D90E91F0642270035B357 /* Paper.swift */; };
+		598D90EC1F0642590035B357 /* SRPCube.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598D90EB1F0642590035B357 /* SRPCube.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		598D90DE1F0641FF0035B357 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		598D90E11F0641FF0035B357 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		598D90E31F0641FF0035B357 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		598D90E91F0642270035B357 /* Paper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Paper.swift; sourceTree = "<group>"; };
+		598D90EB1F0642590035B357 /* SRPCube.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SRPCube.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,9 +61,11 @@
 			isa = PBXGroup;
 			children = (
 				598D90D51F0641FF0035B357 /* AppDelegate.swift */,
-				598D90D71F0641FF0035B357 /* art.scnassets */,
 				598D90D91F0641FF0035B357 /* ViewController.swift */,
+				598D90E91F0642270035B357 /* Paper.swift */,
+				598D90EB1F0642590035B357 /* SRPCube.swift */,
 				598D90DB1F0641FF0035B357 /* Main.storyboard */,
+				598D90D71F0641FF0035B357 /* art.scnassets */,
 				598D90DE1F0641FF0035B357 /* Assets.xcassets */,
 				598D90E01F0641FF0035B357 /* LaunchScreen.storyboard */,
 				598D90E31F0641FF0035B357 /* Info.plist */,
@@ -139,8 +145,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				598D90EC1F0642590035B357 /* SRPCube.swift in Sources */,
 				598D90DA1F0641FF0035B357 /* ViewController.swift in Sources */,
 				598D90D61F0641FF0035B357 /* AppDelegate.swift in Sources */,
+				598D90EA1F0642270035B357 /* Paper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -316,6 +324,7 @@
 				598D90E81F0641FF0035B357 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
