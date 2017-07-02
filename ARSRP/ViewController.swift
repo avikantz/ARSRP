@@ -9,6 +9,7 @@
 import UIKit
 import SceneKit
 import ARKit
+import Toast_Swift
 
 class ViewController: UIViewController, ARSCNViewDelegate, SCNPhysicsContactDelegate {
 	
@@ -145,11 +146,20 @@ class ViewController: UIViewController, ARSCNViewDelegate, SCNPhysicsContactDele
 		//print("did begin contact", contact.nodeA.physicsBody!.categoryBitMask, contact.nodeB.physicsBody!.categoryBitMask)
 		if contact.nodeA.physicsBody?.categoryBitMask == CollisionCategory.cube.rawValue || contact.nodeB.physicsBody?.categoryBitMask == CollisionCategory.cube.rawValue {
 			contact.nodeB.removeFromParentNode() // remove paper on contact
-			self.score += 1
+			if contact.nodeA.isKind(of: SRPCube.self) {
+				if let srpCube = contact.nodeA as? SRPCube {
+//					print("Contact with: \(srpCube.title)")
+					DispatchQueue.main.async {
+						self.score += srpCube.score
+						self.view.makeToast("Hit \(srpCube.title).", duration: 0.5, position: CGPoint(x: self.view.frame.size.width/2, y: self.view.frame.size.height - 64), title: "+ \(srpCube.score)", image: UIImage(named: "\(srpCube.imageName)")!, style: nil, completion: nil)
+					}
+				}
+			}
 			DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {
+				contact.nodeA.removeFromParentNode()
+				self.addNewSRPCube()
 				self.addNewSRPCube()
 			})
-			
 		}
 	}
 	

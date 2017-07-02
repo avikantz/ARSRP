@@ -14,6 +14,7 @@ class SRPCube: SCNNode {
 	
 	var score: Int = 0
 	var title: String = ""
+	var imageName: String = ""
 	
 	override init() {
 		
@@ -40,7 +41,7 @@ class SRPCube: SCNNode {
 		
 		self.score = item.score
 		self.title = item.title
-		
+		self.imageName = item.imageName
 	}
 	
 	required init?(coder aDecoder: NSCoder) {

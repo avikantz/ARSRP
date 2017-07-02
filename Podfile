@@ -8,5 +8,6 @@ target 'ARSRP' do
   # Pods for ARSRP
 
   pod 'CSV.swift'
+  pod 'Toast-Swift'
 
 end

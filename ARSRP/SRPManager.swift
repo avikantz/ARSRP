@@ -52,7 +52,7 @@ class SRPManager: NSObject {
 		var rand = floatBetween(0.0, and: 1.0)
 		rand *= rand
 		let index = Int(rand * Float(sharedManager.items.count))
-		print("random float sq: \(rand), index: \(index)")
+//		print("random float sq: \(rand), index: \(index)")
 		return sharedManager.items[index]
 	}
 
