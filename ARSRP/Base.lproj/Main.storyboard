@@ -39,13 +39,13 @@
                                     <constraint firstAttribute="height" constant="146" id="Ipd-4i-Uyd"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="69 papers published" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="LWt-FG-lVQ">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="69" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="LWt-FG-lVQ">
                                 <rect key="frame" x="16" y="36" width="343" height="43"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="36"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view alpha="0.40000000596046448" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JyX-0d-Jer">
+                            <view clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" alpha="0.40000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JyX-0d-Jer">
                                 <rect key="frame" x="163" y="309" width="48" height="48"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i3q-9h-kIP">
@@ -81,10 +81,19 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="jwf-sp-mJz">
+                                <rect key="frame" x="159" y="79" width="57" height="29"/>
+                                <string key="text">papers
+published</string>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="hS8-sg-jtC" secondAttribute="trailing" id="0tz-mD-fwG"/>
+                            <constraint firstItem="jwf-sp-mJz" firstAttribute="centerX" secondItem="LWt-FG-lVQ" secondAttribute="centerX" id="2is-ip-uda"/>
                             <constraint firstItem="S0w-xh-ArX" firstAttribute="top" secondItem="hS8-sg-jtC" secondAttribute="bottom" constant="-40" id="2wE-pV-AhR"/>
                             <constraint firstItem="uRP-cg-LQ9" firstAttribute="leading" secondItem="K0D-PL-2T1" secondAttribute="leading" id="4Rb-BN-IpT"/>
                             <constraint firstItem="vGT-t9-J2k" firstAttribute="leading" secondItem="K0D-PL-2T1" secondAttribute="leading" id="9VC-88-UxW"/>
@@ -97,6 +106,7 @@
                             <constraint firstItem="S0w-xh-ArX" firstAttribute="top" secondItem="y56-gY-WN4" secondAttribute="bottom" constant="8" id="RS8-jv-7UI"/>
                             <constraint firstItem="y56-gY-WN4" firstAttribute="leading" secondItem="K0D-PL-2T1" secondAttribute="leading" constant="16" id="UBg-Cy-GcZ"/>
                             <constraint firstAttribute="trailing" secondItem="LWt-FG-lVQ" secondAttribute="trailing" constant="16" id="Zp2-Qf-uLx"/>
+                            <constraint firstItem="jwf-sp-mJz" firstAttribute="top" secondItem="LWt-FG-lVQ" secondAttribute="bottom" id="ZvO-oA-vqh"/>
                             <constraint firstItem="S0w-xh-ArX" firstAttribute="top" secondItem="uRP-cg-LQ9" secondAttribute="bottom" id="bGw-Ux-fxm"/>
                             <constraint firstAttribute="trailing" secondItem="vGT-t9-J2k" secondAttribute="trailing" id="cNT-uN-TGj"/>
                             <constraint firstItem="hS8-sg-jtC" firstAttribute="leading" secondItem="K0D-PL-2T1" secondAttribute="leading" id="jzt-kh-xcV"/>

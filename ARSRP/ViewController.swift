@@ -35,7 +35,10 @@ class ViewController: UIViewController, ARSCNViewDelegate, SCNPhysicsContactDele
 		sceneView.scene = scene
 		sceneView.scene.physicsWorld.contactDelegate = self
 		
-		self.addNewSRPCube()
+		// Papers party!
+		for _ in 1...10 {
+			self.addNewSRPCube()
+		}
 		
 		self.score = 0
 	}
@@ -97,7 +100,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, SCNPhysicsContactDele
 		sceneView.scene.rootNode.addChildNode(papersNode)
 		
 		DispatchQueue.main.asyncAfter(deadline: .now() + 2.0, execute: { // remove paper after a while
-			papersNode.removeFromParentNode()
+			self.removeNodeWithAnimation(node: papersNode)
 		})
 		
 	}
@@ -116,19 +119,36 @@ class ViewController: UIViewController, ARSCNViewDelegate, SCNPhysicsContactDele
 	}
 	
 	func addNewSRPCube() {
+		// Too many SRPs
+		if sceneView.scene.rootNode.childNodes.count > 128 {
+			return
+		}
 		let cubeNode = SRPCube()
 		let posX = floatBetween(-0.5, and: 0.5)
 		let posY = floatBetween(-0.5, and: 0.5)
 		cubeNode.position = SCNVector3(posX, posY, -1)
 		cubeNode.rotation = SCNVector4Make(floatBetween(0.5, and: 1.5), floatBetween(-0.2, and: 0.2), floatBetween(-0.4, and: 0.4), floatBetween(-1.2, and: 1.2))
+		cubeNode.opacity = 0
 		sceneView.scene.rootNode.addChildNode(cubeNode)
-		let shrinkAction = SCNAction.scale(to: 0.2, duration: 0.0)
-		cubeNode.runAction(shrinkAction)
-		let expandAction = SCNAction.scale(to: 1.0, duration: 0.4)
-		cubeNode.runAction(expandAction)
+		SCNTransaction.begin()
+		SCNTransaction.animationDuration = 0.5
+		SCNTransaction.animationTimingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
+		cubeNode.opacity = 1.0
+		SCNTransaction.commit()
 	}
 	
-
+	func removeNodeWithAnimation(node: SCNNode) {
+		DispatchQueue.main.async {
+			SCNTransaction.begin()
+			SCNTransaction.animationDuration = 0.3
+			SCNTransaction.animationTimingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseIn)
+			node.scale = SCNVector3(0, 0, 0)
+			SCNTransaction.commit()
+			DispatchQueue.main.asyncAfter(deadline: .now() + 0.4, execute: {
+				node.removeFromParentNode()
+			})
+		}
+	}
 	
 	func getUserVector() -> (SCNVector3, SCNVector3) {
 		if let frame = self.sceneView.session.currentFrame {
@@ -145,18 +165,18 @@ class ViewController: UIViewController, ARSCNViewDelegate, SCNPhysicsContactDele
 	func physicsWorld(_ world: SCNPhysicsWorld, didBegin contact: SCNPhysicsContact) {
 		//print("did begin contact", contact.nodeA.physicsBody!.categoryBitMask, contact.nodeB.physicsBody!.categoryBitMask)
 		if contact.nodeA.physicsBody?.categoryBitMask == CollisionCategory.cube.rawValue || contact.nodeB.physicsBody?.categoryBitMask == CollisionCategory.cube.rawValue {
-			contact.nodeB.removeFromParentNode() // remove paper on contact
+			removeNodeWithAnimation(node: contact.nodeB) // remove paper on contact
 			if contact.nodeA.isKind(of: SRPCube.self) {
 				if let srpCube = contact.nodeA as? SRPCube {
 //					print("Contact with: \(srpCube.title)")
 					DispatchQueue.main.async {
 						self.score += srpCube.score
-						self.view.makeToast("Hit \(srpCube.title).", duration: 0.5, position: CGPoint(x: self.view.frame.size.width/2, y: self.view.frame.size.height - 64), title: "+ \(srpCube.score)", image: UIImage(named: "\(srpCube.imageName)")!, style: nil, completion: nil)
+						self.view.makeToast("Hit \(srpCube.title).", duration: 0.5, position: CGPoint(x: self.view.frame.size.width/2, y: self.view.frame.size.height - 80), title: "+ \(srpCube.score)", image: UIImage(named: "\(srpCube.imageName)")!, style: nil, completion: nil)
 					}
 				}
 			}
+			removeNodeWithAnimation(node: contact.nodeA)
 			DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {
-				contact.nodeA.removeFromParentNode()
 				self.addNewSRPCube()
 				self.addNewSRPCube()
 			})
