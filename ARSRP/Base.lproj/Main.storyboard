@@ -11,7 +11,7 @@
         <!--View Controller-->
         <scene sceneID="6Ct-DB-EtU">
             <objects>
-                <viewController id="Tuh-cz-8hi" customClass="ViewController" customModule="ARViewer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Tuh-cz-8hi" customClass="ViewController" customModule="ARSRP" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="MOa-RX-QuO"/>
                         <viewControllerLayoutGuide type="bottom" id="S0w-xh-ArX"/>
@@ -27,9 +27,21 @@
                                     <outletCollection property="gestureRecognizers" destination="xxp-82-XRq" appends="YES" id="YgY-vA-EAE"/>
                                 </connections>
                             </arscnView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LWt-FG-lVQ">
-                                <rect key="frame" x="156" y="28" width="63" height="43"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="36"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gradientinv" translatesAutoresizingMaskIntoConstraints="NO" id="hS8-sg-jtC">
+                                <rect key="frame" x="0.0" y="607" width="375" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="nOn-f6-bQA"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gradient" translatesAutoresizingMaskIntoConstraints="NO" id="vGT-t9-J2k">
+                                <rect key="frame" x="0.0" y="-32" width="375" height="146"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="146" id="Ipd-4i-Uyd"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="69 papers published" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="LWt-FG-lVQ">
+                                <rect key="frame" x="16" y="36" width="343" height="43"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="36"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -63,16 +75,33 @@
                                     <constraint firstAttribute="bottom" secondItem="i3q-9h-kIP" secondAttribute="bottom" id="rmZ-cr-CgP"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to throw a paper. Move device to aim." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y56-gY-WN4">
+                                <rect key="frame" x="16" y="644.5" width="343" height="14.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="hS8-sg-jtC" secondAttribute="trailing" id="0tz-mD-fwG"/>
+                            <constraint firstItem="S0w-xh-ArX" firstAttribute="top" secondItem="hS8-sg-jtC" secondAttribute="bottom" constant="-40" id="2wE-pV-AhR"/>
                             <constraint firstItem="uRP-cg-LQ9" firstAttribute="leading" secondItem="K0D-PL-2T1" secondAttribute="leading" id="4Rb-BN-IpT"/>
+                            <constraint firstItem="vGT-t9-J2k" firstAttribute="leading" secondItem="K0D-PL-2T1" secondAttribute="leading" id="9VC-88-UxW"/>
+                            <constraint firstAttribute="trailing" secondItem="y56-gY-WN4" secondAttribute="trailing" constant="16" id="EsO-Vu-0Kw"/>
+                            <constraint firstItem="vGT-t9-J2k" firstAttribute="top" secondItem="MOa-RX-QuO" secondAttribute="bottom" constant="-52" id="H2r-GF-5BP"/>
                             <constraint firstItem="JyX-0d-Jer" firstAttribute="centerY" secondItem="K0D-PL-2T1" secondAttribute="centerY" id="IWF-oW-rGy"/>
-                            <constraint firstItem="LWt-FG-lVQ" firstAttribute="top" secondItem="MOa-RX-QuO" secondAttribute="bottom" constant="8" id="M3x-DU-QeQ"/>
+                            <constraint firstItem="LWt-FG-lVQ" firstAttribute="top" secondItem="MOa-RX-QuO" secondAttribute="bottom" constant="16" id="M3x-DU-QeQ"/>
                             <constraint firstAttribute="trailing" secondItem="uRP-cg-LQ9" secondAttribute="trailing" id="NoP-VR-1Ka"/>
                             <constraint firstItem="LWt-FG-lVQ" firstAttribute="centerX" secondItem="K0D-PL-2T1" secondAttribute="centerX" id="PMH-Ip-bfq"/>
+                            <constraint firstItem="S0w-xh-ArX" firstAttribute="top" secondItem="y56-gY-WN4" secondAttribute="bottom" constant="8" id="RS8-jv-7UI"/>
+                            <constraint firstItem="y56-gY-WN4" firstAttribute="leading" secondItem="K0D-PL-2T1" secondAttribute="leading" constant="16" id="UBg-Cy-GcZ"/>
+                            <constraint firstAttribute="trailing" secondItem="LWt-FG-lVQ" secondAttribute="trailing" constant="16" id="Zp2-Qf-uLx"/>
                             <constraint firstItem="S0w-xh-ArX" firstAttribute="top" secondItem="uRP-cg-LQ9" secondAttribute="bottom" id="bGw-Ux-fxm"/>
+                            <constraint firstAttribute="trailing" secondItem="vGT-t9-J2k" secondAttribute="trailing" id="cNT-uN-TGj"/>
+                            <constraint firstItem="hS8-sg-jtC" firstAttribute="leading" secondItem="K0D-PL-2T1" secondAttribute="leading" id="jzt-kh-xcV"/>
                             <constraint firstItem="JyX-0d-Jer" firstAttribute="centerX" secondItem="K0D-PL-2T1" secondAttribute="centerX" id="sOd-lK-8Ut"/>
+                            <constraint firstItem="LWt-FG-lVQ" firstAttribute="leading" secondItem="K0D-PL-2T1" secondAttribute="leading" constant="16" id="vfE-0O-aOX"/>
                             <constraint firstItem="uRP-cg-LQ9" firstAttribute="top" secondItem="K0D-PL-2T1" secondAttribute="top" id="wfn-jH-efw"/>
                         </constraints>
                     </view>
@@ -91,4 +120,8 @@
             <point key="canvasLocation" x="136.80000000000001" y="116.49175412293854"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="gradient" width="1024" height="1024"/>
+        <image name="gradientinv" width="1024" height="1024"/>
+    </resources>
 </document>

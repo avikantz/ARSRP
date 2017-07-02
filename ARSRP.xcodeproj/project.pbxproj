@@ -7,20 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		59356ABB1F09436B00664790 /* srps.csv in Resources */ = {isa = PBXBuildFile; fileRef = 59356ABA1F09436B00664790 /* srps.csv */; };
+		59356ABD1F0943DA00664790 /* SRPManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59356ABC1F0943DA00664790 /* SRPManager.swift */; };
 		598D90D61F0641FF0035B357 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598D90D51F0641FF0035B357 /* AppDelegate.swift */; };
-		598D90D81F0641FF0035B357 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 598D90D71F0641FF0035B357 /* art.scnassets */; };
 		598D90DA1F0641FF0035B357 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598D90D91F0641FF0035B357 /* ViewController.swift */; };
 		598D90DD1F0641FF0035B357 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 598D90DB1F0641FF0035B357 /* Main.storyboard */; };
 		598D90DF1F0641FF0035B357 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 598D90DE1F0641FF0035B357 /* Assets.xcassets */; };
 		598D90E21F0641FF0035B357 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 598D90E01F0641FF0035B357 /* LaunchScreen.storyboard */; };
 		598D90EA1F0642270035B357 /* Paper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598D90E91F0642270035B357 /* Paper.swift */; };
 		598D90EC1F0642590035B357 /* SRPCube.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598D90EB1F0642590035B357 /* SRPCube.swift */; };
+		C7B898D2100889E576E66E2D /* Pods_ARSRP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7993DA00482399F6D04F9ED0 /* Pods_ARSRP.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		22ACA35F7DF36C29E3F0B41C /* Pods-ARSRP.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARSRP.release.xcconfig"; path = "Pods/Target Support Files/Pods-ARSRP/Pods-ARSRP.release.xcconfig"; sourceTree = "<group>"; };
+		59356ABA1F09436B00664790 /* srps.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = srps.csv; path = "../../../../Downloads/heads 2/srps.csv"; sourceTree = "<group>"; };
+		59356ABC1F0943DA00664790 /* SRPManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SRPManager.swift; sourceTree = "<group>"; };
 		598D90D21F0641FF0035B357 /* ARSRP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARSRP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		598D90D51F0641FF0035B357 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		598D90D71F0641FF0035B357 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
 		598D90D91F0641FF0035B357 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		598D90DC1F0641FF0035B357 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		598D90DE1F0641FF0035B357 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -28,6 +32,8 @@
 		598D90E31F0641FF0035B357 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		598D90E91F0642270035B357 /* Paper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Paper.swift; sourceTree = "<group>"; };
 		598D90EB1F0642590035B357 /* SRPCube.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SRPCube.swift; sourceTree = "<group>"; };
+		7993DA00482399F6D04F9ED0 /* Pods_ARSRP.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ARSRP.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F3DB2E0F66BEE6B39EF1B9D1 /* Pods-ARSRP.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARSRP.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ARSRP/Pods-ARSRP.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,17 +41,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C7B898D2100889E576E66E2D /* Pods_ARSRP.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4A7EC4F4C329F07DF273895D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F3DB2E0F66BEE6B39EF1B9D1 /* Pods-ARSRP.debug.xcconfig */,
+				22ACA35F7DF36C29E3F0B41C /* Pods-ARSRP.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		598D90C91F0641FF0035B357 = {
 			isa = PBXGroup;
 			children = (
 				598D90D41F0641FF0035B357 /* ARSRP */,
 				598D90D31F0641FF0035B357 /* Products */,
+				4A7EC4F4C329F07DF273895D /* Pods */,
+				D8A1D980C5313C88AFDA8C2A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -61,16 +79,25 @@
 			isa = PBXGroup;
 			children = (
 				598D90D51F0641FF0035B357 /* AppDelegate.swift */,
+				59356ABC1F0943DA00664790 /* SRPManager.swift */,
 				598D90D91F0641FF0035B357 /* ViewController.swift */,
 				598D90E91F0642270035B357 /* Paper.swift */,
 				598D90EB1F0642590035B357 /* SRPCube.swift */,
+				59356ABA1F09436B00664790 /* srps.csv */,
 				598D90DB1F0641FF0035B357 /* Main.storyboard */,
-				598D90D71F0641FF0035B357 /* art.scnassets */,
 				598D90DE1F0641FF0035B357 /* Assets.xcassets */,
 				598D90E01F0641FF0035B357 /* LaunchScreen.storyboard */,
 				598D90E31F0641FF0035B357 /* Info.plist */,
 			);
 			path = ARSRP;
+			sourceTree = "<group>";
+		};
+		D8A1D980C5313C88AFDA8C2A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7993DA00482399F6D04F9ED0 /* Pods_ARSRP.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -80,9 +107,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 598D90E61F0641FF0035B357 /* Build configuration list for PBXNativeTarget "ARSRP" */;
 			buildPhases = (
+				79CB5CE0D626797030E5EEF6 /* [CP] Check Pods Manifest.lock */,
 				598D90CE1F0641FF0035B357 /* Sources */,
 				598D90CF1F0641FF0035B357 /* Frameworks */,
 				598D90D01F0641FF0035B357 /* Resources */,
+				7EFA757C839B4DDF341DA2F4 /* [CP] Embed Pods Frameworks */,
+				04DCD5332E2E3F2525084858 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -131,14 +161,62 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				598D90D81F0641FF0035B357 /* art.scnassets in Resources */,
 				598D90E21F0641FF0035B357 /* LaunchScreen.storyboard in Resources */,
 				598D90DF1F0641FF0035B357 /* Assets.xcassets in Resources */,
+				59356ABB1F09436B00664790 /* srps.csv in Resources */,
 				598D90DD1F0641FF0035B357 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		04DCD5332E2E3F2525084858 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ARSRP/Pods-ARSRP-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		79CB5CE0D626797030E5EEF6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		7EFA757C839B4DDF341DA2F4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ARSRP/Pods-ARSRP-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		598D90CE1F0641FF0035B357 /* Sources */ = {
@@ -146,6 +224,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				598D90EC1F0642590035B357 /* SRPCube.swift in Sources */,
+				59356ABD1F0943DA00664790 /* SRPManager.swift in Sources */,
 				598D90DA1F0641FF0035B357 /* ViewController.swift in Sources */,
 				598D90D61F0641FF0035B357 /* AppDelegate.swift in Sources */,
 				598D90EA1F0642270035B357 /* Paper.swift in Sources */,
@@ -194,6 +273,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
@@ -249,6 +330,8 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
@@ -279,6 +362,7 @@
 		};
 		598D90E71F0641FF0035B357 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F3DB2E0F66BEE6B39EF1B9D1 /* Pods-ARSRP.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = HN3SCP8A52;
@@ -293,6 +377,7 @@
 		};
 		598D90E81F0641FF0035B357 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 22ACA35F7DF36C29E3F0B41C /* Pods-ARSRP.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = HN3SCP8A52;

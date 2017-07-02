@@ -11,10 +11,17 @@ import SceneKit
 import GameKit
 
 class SRPCube: SCNNode {
+	
+	var score: Int = 0
+	var title: String = ""
+	
 	override init() {
+		
 		super.init()
 		
-		let box = SCNBox(width: 0.3, height: 0.3, length: 0.3, chamferRadius: 0.001)
+		let item = SRPManager.getRandomSRPItem()
+		let dim = CGFloat(0.06 * Float(6 - item.score));
+		let box = SCNBox(width: dim, height: dim, length: dim, chamferRadius: 0.001)
 		self.geometry = box
 		let shape = SCNPhysicsShape(geometry: box, options: nil)
 		self.physicsBody = SCNPhysicsBody(type: .dynamic, shape: shape)
@@ -24,12 +31,16 @@ class SRPCube: SCNNode {
 		self.physicsBody?.contactTestBitMask = CollisionCategory.paper.rawValue
 		
 		var materials = [SCNMaterial]()
-		for i in 1...6 {
-			let material = SCNMaterial()
-			material.diffuse.contents = UIImage(named: "srp\(i)")
+		let material = SCNMaterial()
+		material.diffuse.contents = UIImage(named: item.imageName)
+		for _ in 1...6 {
 			materials.append(material)
 		}
-		self.geometry?.materials  = GKRandomSource.sharedRandom().arrayByShufflingObjects(in: materials) as! [SCNMaterial]
+		self.geometry?.materials  = materials
+		
+		self.score = item.score
+		self.title = item.title
+		
 	}
 	
 	required init?(coder aDecoder: NSCoder) {

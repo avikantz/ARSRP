@@ -14,7 +14,7 @@ class Paper: SCNNode {
 	override init () {
 		super.init()
 		
-		let tube = SCNTube(innerRadius: 0.0222, outerRadius: 0.0224, height: 0.15)
+		let tube = SCNTube(innerRadius: 0.0158, outerRadius: 0.0160, height: 0.15)
 		self.geometry = tube
 		let shape = SCNPhysicsShape(geometry: tube, options: nil)
 		self.physicsBody = SCNPhysicsBody(type: .dynamic, shape: shape)

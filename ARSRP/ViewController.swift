@@ -10,10 +10,6 @@ import UIKit
 import SceneKit
 import ARKit
 
-import UIKit
-import SceneKit
-import ARKit
-
 class ViewController: UIViewController, ARSCNViewDelegate, SCNPhysicsContactDelegate {
 	
 	@IBOutlet var sceneView: ARSCNView!
@@ -125,6 +121,10 @@ class ViewController: UIViewController, ARSCNViewDelegate, SCNPhysicsContactDele
 		cubeNode.position = SCNVector3(posX, posY, -1)
 		cubeNode.rotation = SCNVector4Make(floatBetween(0.5, and: 1.5), floatBetween(-0.2, and: 0.2), floatBetween(-0.4, and: 0.4), floatBetween(-1.2, and: 1.2))
 		sceneView.scene.rootNode.addChildNode(cubeNode)
+		let shrinkAction = SCNAction.scale(to: 0.2, duration: 0.0)
+		cubeNode.runAction(shrinkAction)
+		let expandAction = SCNAction.scale(to: 1.0, duration: 0.4)
+		cubeNode.runAction(expandAction)
 	}
 	
 
@@ -137,10 +137,6 @@ class ViewController: UIViewController, ARSCNViewDelegate, SCNPhysicsContactDele
 			return (dir, pos)
 		}
 		return (SCNVector3(0, 0, -1), SCNVector3(0, 0, -0.2))
-	}
-	
-	func floatBetween(_ first: Float,  and second: Float) -> Float {
-		return (Float(arc4random()) / Float(UInt32.max)) * (first - second) + second
 	}
 	
 	// MARK: - Contact Delegate
