@@ -16,11 +16,26 @@ class ViewController: UIViewController, ARSCNViewDelegate, SCNPhysicsContactDele
 	@IBOutlet var sceneView: ARSCNView!
 	
 	@IBOutlet weak var scoreLabel: UILabel!
+	@IBOutlet weak var papersPublishedLabel: UILabel!
+	
+	@IBOutlet weak var progressView: ProgressView!
+	
+	@IBOutlet weak var overlayView: UIVisualEffectView!
+	@IBOutlet weak var gameTitleLabel: UILabel!
+	@IBOutlet weak var startGameButton: UIButton!
+	
+	var playing: Bool = false {
+		didSet {
+			self.scoreLabel.isHidden = !playing
+			self.papersPublishedLabel.isHidden = !playing
+			self.progressView.isHidden = !playing
+		}
+	}
 	
 	private var score: Int = 0 {
 		didSet {
 			DispatchQueue.main.async {
-				self.scoreLabel.text = String(self.score) + " papers published"
+				self.scoreLabel.text = String(self.score)
 			}
 		}
 	}
@@ -35,12 +50,80 @@ class ViewController: UIViewController, ARSCNViewDelegate, SCNPhysicsContactDele
 		sceneView.scene = scene
 		sceneView.scene.physicsWorld.contactDelegate = self
 		
+		prepareGame()
+		
+	}
+	
+	func prepareGame() {
+		
+		self.playing = false
+		
+		self.overlayView.alpha = 0.0
+		UIView.animate(withDuration: 0.6, delay: 0.0, options: .curveEaseOut, animations: {
+			self.overlayView.alpha = 1.0
+		}) { (completion) in
+			
+		}
+	}
+	
+	@IBAction func startGame(_ sender: Any) {
+		
+		print("Starting game...")
+		
+		DispatchQueue.main.asyncAfter(deadline: .now() + 60.0) {
+			self.gameTitleLabel.text = "Game over. You published \(self.score) papers."
+			self.startGameButton.setTitle("Play Again!", for: .normal)
+			self.endGame(self)
+		}
+		progressView.startCountingDownFor(timeInSeconds: 60.0)
+		
+		UIView.animate(withDuration: 0.6, delay: 0.0, options: .curveEaseIn, animations: {
+			self.overlayView.alpha = 0.0
+		}) { (completion) in
+			
+		}
+		
+		for var node in sceneView.scene.rootNode.childNodes {
+			node.removeFromParentNode()
+		}
+		
 		// Papers party!
 		for _ in 1...10 {
 			self.addNewSRPCube()
 		}
 		
+		self.playing = true
 		self.score = 0
+	}
+	
+	func endGame(_ sender: Any) {
+		
+		print("Ending game...")
+		
+		self.playing = false
+		
+		let alertController = UIAlertController(title: "Enter name", message: "You published \(self.score) papers.", preferredStyle: .alert)
+		
+		let confirmAction = UIAlertAction(title: "Okay", style: .default) { (_) in
+			if let field = alertController.textFields?[0] {
+				// store your data
+				print("Name: \(field.text ?? "-")")
+			} else {
+				// user did not fill field
+			}
+		}
+		
+		let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (_) in }
+		
+		alertController.addTextField { (textField) in
+			textField.placeholder = "Email"
+		}
+		
+		alertController.addAction(confirmAction)
+		alertController.addAction(cancelAction)
+		
+		self.present(alertController, animated: true, completion: nil)
+		
 	}
 	
 	override func viewWillAppear(_ animated: Bool) {
@@ -90,6 +173,10 @@ class ViewController: UIViewController, ARSCNViewDelegate, SCNPhysicsContactDele
 	// MARK: - Actions
 	
 	@IBAction func didTapScreen(_ sender: UITapGestureRecognizer) { // throw a paper
+		if !playing {
+			return
+		}
+		
 		let papersNode = Paper()
 		
 		let (direction, position) = self.getUserVector()
@@ -171,7 +258,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, SCNPhysicsContactDele
 //					print("Contact with: \(srpCube.title)")
 					DispatchQueue.main.async {
 						self.score += srpCube.score
-						self.view.makeToast("Hit \(srpCube.title).", duration: 0.5, position: CGPoint(x: self.view.frame.size.width/2, y: self.view.frame.size.height - 80), title: "+ \(srpCube.score)", image: UIImage(named: "\(srpCube.imageName)")!, style: nil, completion: nil)
+						self.view.makeToast("Hit \(srpCube.title).", duration: 0.5, position: ToastPosition.bottom, title: "+ \(srpCube.score)", image: UIImage(named: "\(srpCube.imageName)")!, style: nil, completion: nil)
 					}
 				}
 			}
