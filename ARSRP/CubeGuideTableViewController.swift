@@ -63,13 +63,29 @@ class CubeGuideTableViewController: UITableViewController {
 
 	// MARK: - Table view delegate
 	
+	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		tableView.deselectRow(at: indexPath, animated: true)
+	}
+	
 	override func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
-		return false
+		return true
 	}
 	
 	override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
 		return 60
 	}
+	
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		if segue.identifier == "imageSegue" {
+			if let cell = sender as? UITableViewCell {
+				if let indexPath = tableView.indexPath(for: cell) {
+					let item = self.srps[indexPath.row]
+					let dest = segue.destination as! SRPImageViewController
+					dest.imageName = item.imageName
+				}
+			}
+		}
+ 	}
 
     /*
     // MARK: - Navigation

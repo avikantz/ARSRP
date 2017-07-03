@@ -14,8 +14,8 @@ class ProgressView: UIView {
 	var maxTimerCounter: Double = 1.0
 	
 	func startCountingDownFor(timeInSeconds: TimeInterval) {
-		timerCounter = timeInSeconds / 0.01;
-		maxTimerCounter = timeInSeconds / 0.01;
+		timerCounter = timeInSeconds / 0.02;
+		maxTimerCounter = timeInSeconds / 0.02;
 		self.timerUpdate()
 	}
 	
@@ -23,7 +23,7 @@ class ProgressView: UIView {
 		self.timerCounter -= 1
 		self.fillPercentage = CGFloat((self.timerCounter) / (self.maxTimerCounter))
 		if (self.timerCounter > 0) {
-			DispatchQueue.main.asyncAfter(deadline: .now() + 0.01, execute: {
+			DispatchQueue.main.asyncAfter(deadline: .now() + 0.02, execute: {
 				self.timerUpdate()
 			})
 		}

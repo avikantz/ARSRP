@@ -55,11 +55,15 @@ class ViewController: UIViewController, ARSCNViewDelegate, SCNPhysicsContactDele
 	}
 	
 	override func viewDidAppear(_ animated: Bool) {
-		
+		let scene = SCNScene()
+		sceneView.scene = scene
+		let configuration = ARWorldTrackingSessionConfiguration()
+		configuration.planeDetection = .horizontal
+		sceneView.session.run(configuration, options: [.resetTracking, .removeExistingAnchors])
 	}
 	
-	override func viewDidDisappear(_ animated: Bool) {
-		
+	override func viewWillDisappear(_ animated: Bool) {
+		sceneView.session.pause()
 	}
 	
 	func prepareGame() {
@@ -78,7 +82,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, SCNPhysicsContactDele
 		
 		print("Starting game...")
 		
-		DispatchQueue.main.asyncAfter(deadline: .now() + 60.0) {
+		DispatchQueue.main.asyncAfter(deadline: .now() + 61.0) {
 			self.gameTitleLabel.text = "Game over. You published \(self.score) papers."
 			self.startGameButton.setTitle("Play Again!", for: .normal)
 			self.endGame(self)
@@ -135,19 +139,6 @@ class ViewController: UIViewController, ARSCNViewDelegate, SCNPhysicsContactDele
 		
 		self.prepareGame()
 		
-	}
-	
-	override func viewWillAppear(_ animated: Bool) {
-		super.viewWillAppear(animated)
-		
-		self.configureSession()
-	}
-	
-	override func viewWillDisappear(_ animated: Bool) {
-		super.viewWillDisappear(animated)
-		
-		// Pause the view's session
-		sceneView.session.pause()
 	}
 	
 	override func didReceiveMemoryWarning() {
