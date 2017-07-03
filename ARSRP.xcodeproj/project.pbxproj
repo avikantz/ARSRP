@@ -17,6 +17,9 @@
 		598D90E21F0641FF0035B357 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 598D90E01F0641FF0035B357 /* LaunchScreen.storyboard */; };
 		598D90EA1F0642270035B357 /* Paper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598D90E91F0642270035B357 /* Paper.swift */; };
 		598D90EC1F0642590035B357 /* SRPCube.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598D90EB1F0642590035B357 /* SRPCube.swift */; };
+		59C7A5601F0A6DD6009D8782 /* CubeGuideTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C7A55F1F0A6DD6009D8782 /* CubeGuideTableViewController.swift */; };
+		59C7A5641F0A7165009D8782 /* HighScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C7A5631F0A7165009D8782 /* HighScore.swift */; };
+		59C7A5661F0A7552009D8782 /* HighScoresTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C7A5651F0A7552009D8782 /* HighScoresTableViewController.swift */; };
 		C7B898D2100889E576E66E2D /* Pods_ARSRP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7993DA00482399F6D04F9ED0 /* Pods_ARSRP.framework */; };
 /* End PBXBuildFile section */
 
@@ -34,6 +37,9 @@
 		598D90E31F0641FF0035B357 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		598D90E91F0642270035B357 /* Paper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Paper.swift; sourceTree = "<group>"; };
 		598D90EB1F0642590035B357 /* SRPCube.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SRPCube.swift; sourceTree = "<group>"; };
+		59C7A55F1F0A6DD6009D8782 /* CubeGuideTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CubeGuideTableViewController.swift; sourceTree = "<group>"; };
+		59C7A5631F0A7165009D8782 /* HighScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighScore.swift; sourceTree = "<group>"; };
+		59C7A5651F0A7552009D8782 /* HighScoresTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighScoresTableViewController.swift; sourceTree = "<group>"; };
 		7993DA00482399F6D04F9ED0 /* Pods_ARSRP.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ARSRP.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3DB2E0F66BEE6B39EF1B9D1 /* Pods-ARSRP.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARSRP.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ARSRP/Pods-ARSRP.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -65,6 +71,7 @@
 				59356ABC1F0943DA00664790 /* SRPManager.swift */,
 				598D90E91F0642270035B357 /* Paper.swift */,
 				598D90EB1F0642590035B357 /* SRPCube.swift */,
+				59C7A5631F0A7165009D8782 /* HighScore.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -83,6 +90,8 @@
 			isa = PBXGroup;
 			children = (
 				598D90D91F0641FF0035B357 /* ViewController.swift */,
+				59C7A55F1F0A6DD6009D8782 /* CubeGuideTableViewController.swift */,
+				59C7A5651F0A7552009D8782 /* HighScoresTableViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -260,9 +269,12 @@
 			files = (
 				598D90EC1F0642590035B357 /* SRPCube.swift in Sources */,
 				59356ABD1F0943DA00664790 /* SRPManager.swift in Sources */,
+				59C7A5601F0A6DD6009D8782 /* CubeGuideTableViewController.swift in Sources */,
 				598D90DA1F0641FF0035B357 /* ViewController.swift in Sources */,
 				598D90D61F0641FF0035B357 /* AppDelegate.swift in Sources */,
 				598D90EA1F0642270035B357 /* Paper.swift in Sources */,
+				59C7A5661F0A7552009D8782 /* HighScoresTableViewController.swift in Sources */,
+				59C7A5641F0A7165009D8782 /* HighScore.swift in Sources */,
 				59356AC31F0A15AF00664790 /* ProgressView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -9,5 +9,6 @@ target 'ARSRP' do
 
   pod 'CSV.swift'
   pod 'Toast-Swift'
+  pod 'RealmSwift'
 
 end

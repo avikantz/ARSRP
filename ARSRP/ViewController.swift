@@ -43,14 +43,22 @@ class ViewController: UIViewController, ARSCNViewDelegate, SCNPhysicsContactDele
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
-		sceneView.delegate = self
-		sceneView.showsStatistics = false
-		
 		let scene = SCNScene()
 		sceneView.scene = scene
 		sceneView.scene.physicsWorld.contactDelegate = self
 		
+		sceneView.delegate = self
+		sceneView.showsStatistics = false
+		
 		prepareGame()
+		
+	}
+	
+	override func viewDidAppear(_ animated: Bool) {
+		
+	}
+	
+	override func viewDidDisappear(_ animated: Bool) {
 		
 	}
 	
@@ -108,21 +116,24 @@ class ViewController: UIViewController, ARSCNViewDelegate, SCNPhysicsContactDele
 			if let field = alertController.textFields?[0] {
 				// store your data
 				print("Name: \(field.text ?? "-")")
+				HighScores.saveHighScore(name: "\(field.text ?? "Unnamed Paper Writer")", score: self.score)
 			} else {
-				// user did not fill field
+				
 			}
 		}
 		
 		let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (_) in }
 		
 		alertController.addTextField { (textField) in
-			textField.placeholder = "Email"
+			textField.placeholder = "Name"
 		}
 		
 		alertController.addAction(confirmAction)
 		alertController.addAction(cancelAction)
 		
 		self.present(alertController, animated: true, completion: nil)
+		
+		self.prepareGame()
 		
 	}
 	
