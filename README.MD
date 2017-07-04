@@ -2,7 +2,7 @@
 
 #### Demo of ARKit with SRP.
 
-![](img/SRPCube.gif)
+[![ARSRP](img/ARSRPIcon.jpg)](https://www.youtube.com/watch?v=jFVgJvR0zVA)
 
 ## The deal
 
