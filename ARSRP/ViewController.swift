@@ -55,11 +55,13 @@ class ViewController: UIViewController, ARSCNViewDelegate, SCNPhysicsContactDele
 	}
 	
 	override func viewDidAppear(_ animated: Bool) {
-		var configuration = ARSessionConfiguration()
-		if ARWorldTrackingSessionConfiguration.isSupported {
-			configuration = ARWorldTrackingSessionConfiguration()
+		if ARWorldTrackingConfiguration.isSupported {
+			let configuration = ARWorldTrackingConfiguration()
+			sceneView.session.run(configuration)
+		} else {
+			let configuration = AROrientationTrackingConfiguration()
+			sceneView.session.run(configuration)
 		}
-		sceneView.session.run(configuration)
 	}
 	
 	override func viewWillDisappear(_ animated: Bool) {
@@ -199,12 +201,11 @@ class ViewController: UIViewController, ARSCNViewDelegate, SCNPhysicsContactDele
 	// MARK: - Game Functionality
 	
 	func configureSession() {
-		if ARWorldTrackingSessionConfiguration.isSupported {
-			let configuration = ARWorldTrackingSessionConfiguration()
-			configuration.planeDetection = ARWorldTrackingSessionConfiguration.PlaneDetection.horizontal
+		if ARWorldTrackingConfiguration.isSupported {
+			let configuration = ARWorldTrackingConfiguration()
 			sceneView.session.run(configuration)
 		} else {
-			let configuration = ARSessionConfiguration()
+			let configuration = AROrientationTrackingConfiguration()
 			sceneView.session.run(configuration)
 		}
 	}
@@ -243,7 +244,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, SCNPhysicsContactDele
 	
 	func getUserVector() -> (SCNVector3, SCNVector3) {
 		if let frame = self.sceneView.session.currentFrame {
-			let mat = SCNMatrix4FromMat4(frame.camera.transform)
+			let mat = SCNMatrix4.init(frame.camera.transform)
 			let dir = SCNVector3(-2 * mat.m31, -2 * mat.m32, -2 * mat.m33)
 			let pos = SCNVector3(mat.m41, mat.m42, mat.m43)
 			return (dir, pos)

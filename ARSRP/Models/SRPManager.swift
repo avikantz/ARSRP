@@ -35,8 +35,8 @@ class SRPManager: NSObject {
 		if let stream = InputStream(fileAtPath: Bundle.main.path(forResource: "srps", ofType: "csv")!) {
 			let csv = try! CSVReader(stream: stream)
 			while let row = csv.next() {
-				if let score = Int(row[2]), let imageName = String(row[0]), let title = String(row[1]) {
-					let item = SRPItem(score: score, imageName: imageName, title: title)
+				if let score = Int(row[2]) {
+					let item = SRPItem(score: score, imageName: row[0], title: row[1])
 					items.append(item)
 				}
 			}

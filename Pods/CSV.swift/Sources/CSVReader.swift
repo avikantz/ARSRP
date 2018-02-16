@@ -15,11 +15,6 @@ internal let DQUOTE: UnicodeScalar = "\""
 internal let DQUOTE_STR: String = "\""
 internal let DQUOTE2_STR: String = "\"\""
 
-internal let defaultHasHeaderRow = false
-internal let defaultTrimFields = false
-internal let defaultDelimiter: UnicodeScalar = ","
-internal let defaultWhitespaces = CharacterSet.whitespaces
-
 /// No overview available.
 public class CSVReader {
 
@@ -88,6 +83,11 @@ public class CSVReader {
 }
 
 extension CSVReader {
+
+    public static let defaultHasHeaderRow: Bool = false
+    public static let defaultTrimFields: Bool = false
+    public static let defaultDelimiter: UnicodeScalar = ","
+    public static let defaultWhitespaces: CharacterSet = .whitespaces
 
     /// Create an instance with `InputStream`.
     ///
@@ -354,10 +354,10 @@ extension CSVReader {
 
 //extension CSVReader {
 //
-//    public func enumerateRows(_ block: (([String], [String]?, inout Bool) throws -> Void)) throws {
+//    public func enumerateRows(_ block: ((CSVReader, inout Bool) throws -> Void)) throws {
 //        var stop = false
-//        while let row = readRow() {
-//            try block(row, headerRow, &stop)
+//        while next() != nil {
+//            try block(self, &stop)
 //            if stop {
 //                break
 //            }

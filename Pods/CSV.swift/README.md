@@ -1,6 +1,7 @@
 # CSV.swift
 
 [![Build Status](https://travis-ci.org/yaslab/CSV.swift.svg?branch=master)](https://travis-ci.org/yaslab/CSV.swift)
+[![codecov](https://codecov.io/gh/yaslab/CSV.swift/branch/master/graph/badge.svg)](https://codecov.io/gh/yaslab/CSV.swift)
 
 CSV reading and writing library written in Swift.
 
@@ -21,6 +22,8 @@ while let row = csv.next() {
 ```
 
 ### From file
+
+NOTE: The default character encoding is `UTF8`.
 
 ```swift
 import Foundation
@@ -76,14 +79,16 @@ import Foundation
 import CSV
 
 let stream = InputStream(fileAtPath: "/path/to/file.csv")!
-let csv = try! CSV(stream: stream,
-                   codecType: UTF16.self,
-                   endian: .big)
+let csv = try! CSVReader(stream: stream,
+                         codecType: UTF16.self,
+                         endian: .big)
 ```
 
 ## Usage for writing CSV
 
 ### Write to memory and get a CSV String
+
+NOTE: The default character encoding is `UTF8`.
 
 ```swift
 import Foundation
@@ -114,6 +119,8 @@ print(csvString)
 
 ### Write to file
 
+NOTE: The default character encoding is `UTF8`.
+
 ```swift
 import Foundation
 import CSV
@@ -133,26 +140,19 @@ csv.stream.close()
 ### CocoaPods
 
 ```ruby
-pod 'CSV.swift', '~> 2.0'
+pod 'CSV.swift', '~> 2.1.0'
 ```
 
 ### Carthage
 
 ```
-github "yaslab/CSV.swift" ~> 2.0
+github "yaslab/CSV.swift" ~> 2.1.0
 ```
 
 ### Swift Package Manager
 
 ```swift
-import PackageDescription
-
-let package = Package(
-    name: "PackageName",
-    dependencies: [
-        .Package(url: "https://github.com/yaslab/CSV.swift.git", majorVersion: 2, minor: 0)
-    ]
-)
+.package(url: "https://github.com/yaslab/CSV.swift.git", .upToNextMinor(from: "2.1.0"))
 ```
 
 ## Reference specification
