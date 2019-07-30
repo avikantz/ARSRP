@@ -98,7 +98,7 @@ class ViewController: UIViewController, ARSCNViewDelegate, SCNPhysicsContactDele
 			
 		}
 		
-		for var node in sceneView.scene.rootNode.childNodes {
+		for node in sceneView.scene.rootNode.childNodes {
 			node.removeFromParentNode()
 		}
 		
@@ -263,7 +263,9 @@ class ViewController: UIViewController, ARSCNViewDelegate, SCNPhysicsContactDele
 //					print("Contact with: \(srpCube.title)")
 					DispatchQueue.main.async {
 						self.score += srpCube.score
-						self.view.makeToast("Hit \(srpCube.title).", duration: 0.5, position: ToastPosition.bottom, title: "+ \(srpCube.score)", image: UIImage(named: "\(srpCube.imageName)")!, style: nil, completion: nil)
+						if let view = self.view {
+							view.makeToast("Hit \(srpCube.title).", duration: 0.5, position: .bottom, title: "+ \(srpCube.score)", image: UIImage(named: "\(srpCube.imageName)")!)
+						}
 					}
 				}
 			}

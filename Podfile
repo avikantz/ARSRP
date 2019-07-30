@@ -7,7 +7,7 @@ target 'ARSRP' do
 
   # Pods for ARSRP
 
-  pod 'CSV.swift', '~> 2.1.0'
+  pod 'CSV.swift'
   pod 'Toast-Swift'
   pod 'RealmSwift'
 

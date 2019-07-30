@@ -159,7 +159,6 @@
 				598D90CF1F0641FF0035B357 /* Frameworks */,
 				598D90D01F0641FF0035B357 /* Resources */,
 				7EFA757C839B4DDF341DA2F4 /* [CP] Embed Pods Frameworks */,
-				04DCD5332E2E3F2525084858 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -218,21 +217,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		04DCD5332E2E3F2525084858 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ARSRP/Pods-ARSRP-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		79CB5CE0D626797030E5EEF6 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -257,7 +241,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-ARSRP/Pods-ARSRP-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-ARSRP/Pods-ARSRP-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/CSV.swift/CSV.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
@@ -272,7 +256,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ARSRP/Pods-ARSRP-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ARSRP/Pods-ARSRP-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

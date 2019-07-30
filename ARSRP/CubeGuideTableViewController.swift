@@ -72,7 +72,7 @@ class CubeGuideTableViewController: UITableViewController {
 	}
 	
 	override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-		return 60
+		return 72
 	}
 	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
